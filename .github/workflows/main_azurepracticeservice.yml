@@ -31,7 +31,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: ${{ github.workspace }}/target/*.war
+          path: java-app/target/*.war
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
