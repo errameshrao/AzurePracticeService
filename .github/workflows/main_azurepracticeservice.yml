@@ -28,11 +28,11 @@ jobs:
         run: mvn clean install
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3  # Use stable version
         with:
           name: java-app
-          path: build
-          if-no-files-found: error
+          path: target/*.war  # Adjust path to the actual location of the WAR file
+          if-no-files-found: error  # Ensure error if no file is found
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,10 +46,10 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v3  # Use stable version
         with:
           name: java-app
-          path: .
+          path: .  # This will download the artifact to the current directory
       
       - name: Login to Azure
         uses: azure/login@v2
