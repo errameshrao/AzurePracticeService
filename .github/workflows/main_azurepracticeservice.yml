@@ -28,7 +28,7 @@ jobs:
         run: mvn clean install
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3  # Use stable version
+        uses: actions/upload-artifact@v4  # Use stable version
         with:
           name: java-app
           path: target/*.war  # Adjust path to the actual location of the WAR file
@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3  # Use stable version
+        uses: actions/download-artifact@v4  # Use stable version
         with:
           name: java-app
           path: .  # This will download the artifact to the current directory
