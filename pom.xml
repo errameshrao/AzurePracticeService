@@ -13,7 +13,7 @@
     <version>1.0.0</version>
     <name>AzurePracticeService</name>
     <description>AzurePracticeService</description>
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
     <properties>
         <java.version>17</java.version>
     </properties>
